@@ -100,11 +100,42 @@ alt ajoutOK == true
       Classe classeMatu-->>-main(): ajoutOK4
       main()->>+Classe classeMatu : ajouteEleve(julien)
       Classe classeMatu-->>-main(): ajoutOK5
-      
+            
+      alt ( ajoutOK1 == true ) ET ( ajoutOK2 == true ) ET ( ajoutOK3 == true ) ET ( ajoutOK4 == true ) ET ( ajoutOK5 == true )
+                  main()->>+Personne jean : ajouteAmi(john)
+                  Personne jean-->>-main(): ajoutOK
+                  alt ajoutOK == true
+                        main()->>+Personne jean : ajouteAmi(julien)
+                        Personne jean-->>-main(): ajoutOK
+                        alt ajoutOK == true
+                              main()->>+Personne john : ajouteAmi(julien)
+                              Personne john-->>-main(): ajoutOK
+                              alt ajoutOK == true
+                                    main()->>+Personne directrice : ajouteAmi(jacques)
+                                    Personne directrice-->>-main(): ajoutOK
+                                    alt ajoutOK == true
+                                          main()->>System.out : println("---------------------------------")
+                                          main()->>System.out : println("L'école " + emf.getNom() + " contient les classes suivantes :")
+                                          main()->>+Ecole emf : getClasses()
+                                          Ecole emf-->>-main(): classesEMF
+                                        
 
 
-
-
+                                    else
+                                       main()->>System.err : println("La directrice n'a pas pu ajouter Jacques comme ami !")
+                                    end
+                              else
+                                 main()->>System.err : println("John n'a pas pu ajouter Julien comme ami !")
+                              end
+                        else
+                           main()->>System.err : println("Jean n'a pas pu ajouter Julien comme ami !")
+                        end
+                  else
+                     main()->>System.err : println("Jean n'a pas pu ajouter John comme ami !")
+                  end
+            else
+               main()->>System.err : println("Les élèves n'ont pas pu être ajoutés dans les classes!")
+            end
    else
       main()->>System.err : println("La classe matu n'a pas pu être ajoutée !")
    end
@@ -113,41 +144,8 @@ else
 end
 ````
 
-alt ( ajoutOK1 == true ) ET ( ajoutOK2 == true ) ET ( ajoutOK3 == true ) ET ( ajoutOK4 == true ) ET ( ajoutOK5 == true )
-            main()->>+Personne jean : ajouteAmi(john)
-            Personne jean-->>-main(): ajoutOK
-            alt ajoutOK == true
-                  main()->>+Personne jean : ajouteAmi(julien)
-                  Personne jean-->>-main(): ajoutOK
-                  alt ajoutOK == true
-                        main()->>+Personne john : ajouteAmi(julien)
-                        Personne john-->>-main(): ajoutOK
-                        alt ajoutOK == true
-                              main()->>+Personne directrice : ajouteAmi(jacques)
-                              Personne directrice-->>-main(): ajoutOK
-                              alt ajoutOK == true
-                                    main()->>System.out : println("---------------------------------")
-                                    main()->>System.out : println("L'école " + emf.getNom() + " contient les classes suivantes :")
-                                    main()->>+Ecole emf : getClasses()
-                                    Ecole emf-->>-main(): classesEMF
-                                    loop FOR EVERY classe IN classesEMF NOT NULL
-                                          main()->>System.out : println(classe.getNom())
-                                    end
-                              else
-                                 main()->>System.err : println("La directrice n'a pas pu ajouter Jacques comme ami !")
-                              end
-                        else
-                           main()->>System.err : println("John n'a pas pu ajouter Julien comme ami !")
-                        end
-                  else
-                     main()->>System.err : println("Jean n'a pas pu ajouter Julien comme ami !")
-                  end
-            else
-               main()->>System.err : println("Jean n'a pas pu ajouter John comme ami !")
-            end
-      else
-         main()->>System.err : println("Les élèves n'ont pas pu être ajoutés dans les classes!")
-      end
-
+  loop FOR EVERY classe IN classesEMF NOT NULL
+                                                main()->>System.out : println(classe.getNom())
+                                          end
 ## RESTITUTION :
 1. Rendre ce devoir normalement par `push` GitHub
