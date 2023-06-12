@@ -17,15 +17,18 @@ Ci-dessous le diagramme de classes UML pour l'ensemble de ce programme  :
 ---
 title: D09-UML-Is-Easy
 ---
-
 classDiagram
-
-
-
+namespace BaseShapes {
+    class Triangle
+    class Rectangle {
+      double width
+      double height
+    }
+}
+classDiagram
 class Application {
     +main(String[] args)$ void
 }
-
 class Ecole {
    +int MAX_CLASSES_PAR_ECOLE$
    -String nom
