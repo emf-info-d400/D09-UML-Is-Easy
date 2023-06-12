@@ -22,7 +22,7 @@ class Application {
     +main(String[] args)$ void
 }
 
-class models:Ecole {
+class "models::Ecole" {
    +int MAX_CLASSES_PAR_ECOLE$
    -String nom
    -Personne directeur
