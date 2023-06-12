@@ -118,22 +118,22 @@ alt ajoutOK == true
                                     end
 
                               else
-                                 main()->>System.err : println("La directrice n'a pas pu ajouter Jacques comme ami !")
+                                 main()->>System.out : println("La directrice n'a pas pu ajouter Jacques comme ami !")
                               end
                         else
-                           main()->>System.err : println("John n'a pas pu ajouter Julien comme ami !")
+                           main()->>System.out : println("John n'a pas pu ajouter Julien comme ami !")
                         end
                   else
-                     main()->>System.err : println("Jean n'a pas pu ajouter Julien comme ami !")
+                     main()->>System.out : println("Jean n'a pas pu ajouter Julien comme ami !")
                   end
             else
-               main()->>System.err : println("Les élèves n'ont pas pu être ajoutés dans les classes!")
+               main()->>System.out : println("Les élèves n'ont pas pu être ajoutés dans les classes!")
             end
       else
-         main()->>System.err : println("La classe matu n'a pas pu être ajoutée !")
+         main()->>System.out : println("La classe matu n'a pas pu être ajoutée !")
       end
 else
-   main()->>System.err : println("La classe info n'a pas pu être ajoutée !")
+   main()->>System.out : println("La classe info n'a pas pu être ajoutée !")
 end
 ````
 
