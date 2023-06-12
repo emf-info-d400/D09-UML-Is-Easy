@@ -11,7 +11,7 @@ Blablabla bla bla bla.
 Blablabla bla bla bla.
 ````
 # UML :
-# Diagramme des classes de l'application
+## Diagramme des classes de l'application
 Ci-dessous le diagramme de classes UML pour l'ensemble de ce programme  :
 ```mermaid
 ---
@@ -70,7 +70,7 @@ Classe "1" o--> "0..n" Personne : eleves
 Personne "1" o--> "0..n" Personne : amis
 Application ..> Ecole : utilise
 ```
-# Diagramme de séquence du main() de l'application :
+## Diagramme de séquence du main() de l'application :
 ```mermaid
 ---
 title: F09-UML-Is-Easy / Séquence du main()
@@ -146,13 +146,3 @@ sequenceDiagram
 ```
 ## RESTITUTION :
 1. Rendre ce devoir normalement par `push` GitHub
-```mermaid
-classDiagram
-namespace BaseShapes{
-   class Triangle
-   class Rectangle{
-      double width
-      double height
-   }
-}
-```
