@@ -12,7 +12,6 @@ Blablabla bla bla bla.
 ````
 # UML :
 ## Diagramme des classes de l'application
-Ci-dessous le diagramme de classes UML pour l'ensemble de ce programme  :
 ```mermaid
 ---
 title: F09-UML-Is-Easy / Classes
@@ -84,6 +83,8 @@ sequenceDiagram
     main()->>Personne jacques : <<creation>>
     main()->>Personne john : <<creation>>
     main()->>Personne julien : <<creation>>
+```
+
 
     main()->>+Ecole emf : setDirecteur(directrice)
     main()->>+Ecole emf : ajouteClasse(classeInfo)
@@ -143,6 +144,6 @@ sequenceDiagram
     else
         main()->>System.err : println("La classe info n'a pas pu être ajoutée !")
     end
-```
+
 ## RESTITUTION :
 1. Rendre ce devoir normalement par `push` GitHub
