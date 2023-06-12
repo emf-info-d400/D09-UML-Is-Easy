@@ -54,7 +54,7 @@ class Personne {
    +supprimeAmi(Personne ancienAmi) boolean
    +toString() String
 }
-note for Eleve "MAX_AMIS_PAR_PERSONNE = 10"
+note for Personne "MAX_AMIS_PAR_PERSONNE = 10"
 note for Classe "MAX_ELEVES_PAR_CLASSE = 20"
 note for Ecole "MAX_CLASSES_PAR_ECOLE = 16"
 Ecole "1" o--> "0..n" Classe : classes
