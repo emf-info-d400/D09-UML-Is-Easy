@@ -24,6 +24,7 @@ class Application {
 class Ecole {
    +int MAX_CLASSES_PAR_ECOLE$
    -String nom
+   -Personne directeur
    -Classe[] classes
    +Ecole(String nom)    
    +ajouteClasse(Classe classeAAjouter) boolean
@@ -35,30 +36,31 @@ class Ecole {
 class Classe {
    +int MAX_ELEVES_PAR_CLASSE$
    -String nom
-   -Eleve[] eleves
+   -Personne[] eleves
    +Classe(String nom)
-   +ajouteEleve(Eleve eleveAAjouter) boolean
-   +supprimeEleve(Eleve eleveASupprimer) boolean
+   +ajouteEleve(Personne eleveAAjouter) boolean
+   +supprimeEleve(Personne eleveASupprimer) boolean
    +totalEleves() int
    +toString() String
 }
 
-class Eleve {
-   +int MAX_COPAINS_PAR_ELEVE$
+class Personne {
+   +int MAX_AMIS_PAR_PERSONNE$
    -String nom
    -String prenom
-   -Eleve[] amis
-   +Eleve(String nom)
-   +ajouteAmi(Eleve nouvelAmi) boolean
-   +supprimeAmi(Eleve ancienAmi) boolean
+   -Personne[] amis
+   +Personne(String nom)
+   +ajouteAmi(Personne nouvelAmi) boolean
+   +supprimeAmi(Personne ancienAmi) boolean
    +toString() String
 }
-note for Eleve "MAX_COPAINS_PAR_ELEVE = 10"
+note for Eleve "MAX_AMIS_PAR_PERSONNE = 10"
 note for Classe "MAX_ELEVES_PAR_CLASSE = 20"
 note for Ecole "MAX_CLASSES_PAR_ECOLE = 16"
 Ecole "1" o--> "0..n" Classe : classes
-Classe "1" o--> "0..n" Eleve : eleves
-Eleve "1" o--> "0..n" Eleve : amis
+Ecole "1" o--> "1" Personne : directeur
+Classe "1" o--> "0..n" Personne : eleves
+Eleve "1" o--> "0..n" Personne : amis
 Application ..> Ecole : utilise
 ```
 
