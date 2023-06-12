@@ -11,6 +11,7 @@ Blablabla bla bla bla.
 Blablabla bla bla bla.
 ````
 # UML :
+## diagramme des classes de l'application
 Ci-dessous le diagramme de classes UML pour l'ensemble de ce programme  :
 ```mermaid
 ---
@@ -21,7 +22,7 @@ class Application {
     +main(String[] args)$ void
 }
 
-class Ecole {
+class models::Ecole {
    +int MAX_CLASSES_PAR_ECOLE$
    -String nom
    -Personne directeur
