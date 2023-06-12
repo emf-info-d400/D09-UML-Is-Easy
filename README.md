@@ -65,11 +65,11 @@ Application ..> Ecole : utilise
 1. Rendre ce devoir normalement par `push` GitHub
 ```mermaid
 classDiagram
-namespace BaseShapes {
-    class Triangle
-    class Rectangle {
+namespace BaseShapes{
+   class Triangle
+   class Rectangle{
       double width
       double height
-    }
+   }
 }
 ```
