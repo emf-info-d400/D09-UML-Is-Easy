@@ -60,7 +60,7 @@ note for Ecole "MAX_CLASSES_PAR_ECOLE = 16"
 Ecole "1" o--> "0..n" Classe : classes
 Ecole "1" o--> "1" Personne : directeur
 Classe "1" o--> "0..n" Personne : eleves
-Eleve "1" o--> "0..n" Personne : amis
+Personne "1" o--> "0..n" Personne : amis
 Application ..> Ecole : utilise
 ```
 
