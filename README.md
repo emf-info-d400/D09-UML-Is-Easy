@@ -119,7 +119,9 @@ alt ajoutOK == true
                                           main()->>+Ecole emf : getClasses()
                                           Ecole emf-->>-main(): classesEMF
                                         
-
+                                          loop FOR EVERY classe IN classesEMF NOT NULL
+                                             main()->>System.out : println(classe.getNom())
+                                          end
 
                                     else
                                        main()->>System.err : println("La directrice n'a pas pu ajouter Jacques comme ami !")
@@ -144,8 +146,6 @@ else
 end
 ````
 
-  loop FOR EVERY classe IN classesEMF NOT NULL
-                                                main()->>System.out : println(classe.getNom())
-                                          end
+
 ## RESTITUTION :
 1. Rendre ce devoir normalement par `push` GitHub
