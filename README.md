@@ -97,10 +97,23 @@ alt ajoutOK == true
       main()->>+Classe classeInfo : ajouteEleve(john)
       Classe classeInfo-->>-main(): ajoutOK3
       main()->>+Classe classeMatu : ajouteEleve(jean)
-      Classe classeInfo-->>-main(): ajoutOK4
+      Classe classeMatu-->>-main(): ajoutOK4
       main()->>+Classe classeMatu : ajouteEleve(julien)
-      Classe classeInfo-->>-main(): ajoutOK5
-      alt ( ajoutOK1 == true ) ET ( ajoutOK2 == true ) ET ( ajoutOK3 == true ) ET ( ajoutOK4 == true ) ET ( ajoutOK5 == true )
+      Classe classeMatu-->>-main(): ajoutOK5
+      
+
+
+
+
+   else
+      main()->>System.err : println("La classe matu n'a pas pu être ajoutée !")
+   end
+else
+   main()->>System.err : println("La classe info n'a pas pu être ajoutée !")
+end
+````
+
+alt ( ajoutOK1 == true ) ET ( ajoutOK2 == true ) ET ( ajoutOK3 == true ) ET ( ajoutOK4 == true ) ET ( ajoutOK5 == true )
             main()->>+Personne jean : ajouteAmi(john)
             Personne jean-->>-main(): ajoutOK
             alt ajoutOK == true
@@ -135,12 +148,6 @@ alt ajoutOK == true
       else
          main()->>System.err : println("Les élèves n'ont pas pu être ajoutés dans les classes!")
       end
-   else
-      main()->>System.err : println("La classe matu n'a pas pu être ajoutée !")
-   end
-else
-   main()->>System.err : println("La classe info n'a pas pu être ajoutée !")
-end
 
 ## RESTITUTION :
 1. Rendre ce devoir normalement par `push` GitHub
