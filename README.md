@@ -56,6 +56,8 @@ class Eleve {
 note for Eleve "MAX_COPAINS_PAR_ELEVE = 10"
 note for Classe "MAX_ELEVES_PAR_CLASSE = 20"
 note for Ecole "MAX_CLASSES_PAR_ECOLE = 16"
+Ecole "1" o--> "0..n" Classe : classes
+Classe "1" o--> "0..n" Eleve : eleves
 Eleve "1" o--> "0..n" Eleve : amis
 Application ..> Ecole : utilise
 ```
