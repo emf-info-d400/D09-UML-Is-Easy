@@ -15,9 +15,17 @@ Blablabla bla bla bla.
 Ci-dessous le diagramme de classes UML pour l'ensemble de ce programme  :
 ```mermaid
 ---
-title: D02-PersonneEtCopains
+title: D09-UML-Is-Easy
 ---
+
 classDiagram
+
+namespace Factory {
+   class Tool {
+      -String name
+   }
+}
+
 class Application {
     +main(String[] args)$ void
 }
