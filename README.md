@@ -3,13 +3,18 @@ Exercice de lecture et retranscription en Java d'informations fournies en UML.
 ## CONSIGNE :
 - Regardez avec attention les schémas UML fournis ci-dessous.
 - Retranscrivez ceux-ci avec précision en Java afin d'obtenir une application fonctionnelle.
+- Une fois que vous avez mis en place l'ensemble des classes, leurs attributs et leurs méthodes, codez-les.
+- Il n'y a aucune indication particulière pour le codage de ces méthodes si ce n'est que le bon sens prime et que vous devez appliquer les enseignements reçus à l'EMF.
 
 Vous devriez obtenir une sortie console telle que celle-ci :
 ````
-Blablabla bla bla bla.
-Blablabla bla bla bla.
-Blablabla bla bla bla.
+---------------------------------
+L'école 'Ecole des métiers de Fribourg' contient les classes suivantes :
+'MatuXYZ'
+'300211'
+---------------------------------
 ````
+
 # UML :
 ## Diagramme des classes de l'application
 ```mermaid
@@ -109,14 +114,13 @@ alt ajoutOK == true
                               Personne directrice-->>-main(): ajoutOK
                               alt ajoutOK == true
                                     main()->>System.out : println("---------------------------------")
-                                    main()->>System.out : println("L'école " + emf.getNom() + " contient les classes suivantes :")
+                                    main()->>System.out : println("L'école '" + emf.getNom() + "' contient les classes suivantes :")
                                     main()->>+Ecole emf : getClasses()
                                     Ecole emf-->>-main(): classesEMF
-                                    
                                     loop FOR EVERY classe IN classesEMF NOT NULL
-                                       main()->>System.out : println(classe.getNom())
+                                       main()->>System.out : println("'" + classe.getNom() + "'")
                                     end
-
+                                    main()->>System.out : println("---------------------------------")
                               else
                                  main()->>System.out : println("La directrice n'a pas pu ajouter Jacques comme ami !")
                               end
@@ -136,7 +140,6 @@ else
    main()->>System.out : println("La classe info n'a pas pu être ajoutée !")
 end
 ````
-
 
 ## RESTITUTION :
 1. Rendre ce devoir normalement par `push` GitHub
